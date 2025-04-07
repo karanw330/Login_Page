@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <style>
+    body {
+      background-image: url('static/img_4.png');
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+    .center {
+      margin: auto;
+      width: 500px;
+      border: 3px solid green;
+      padding: 10px 60px;
+      text-align: center;
+    }
+    .opaque {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    padding: 20px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+    .text-center {
+      text-align: center;
+      border: 3px solid green;
+    }
+    .width {
+      width: 328px;
+    }
+    a:hover {
+      color: #800080;
+    }
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <link href='https://fonts.googleapis.com/css?family=Josefin Sans' rel='stylesheet'>
+</head>
+<body>
+<div style="padding: 250px 0px;" >
+  <div class="center opaque">
+    <div class="card-body">
+        <h5 style= "padding: 20px; font-family:'Josefin sans'; font-size: 180%; color:#800020" class="card-title center-text"><b>Login</b></h5>
+        <form action="/authentication" method="post">
+        <div class="mb-3">
+          <input type="email" class="form-control border-rad opaque" id="exampleFormControlInput1" style="color:#915F6D" name="username" placeholder="Username">
+        </div>
+        <div class="mb-3">
+          <label for="exampleFormControlInput2" class="visually-hidden">Password</label>
+          <input type="password" class="form-control border-rad" id="exampleFormControlInput2" name="password" placeholder="Password">
+        </div>
+        <div class="col-auto width">
+          <button type="submit" class="btn btn-light width">Login</button>
+        </div>
+        <div style="padding:20px">
+            <p style="color:#9F2B68"><b>Don't have an account? <a href="static/img_4.png" style="color:purple; text-decoration:none;">Register</b></a></p>
+        </div>
+        </form>
+    </div>
+  </div>
+</div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
+    </script>
+</body>
+</html>
