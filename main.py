@@ -1,5 +1,5 @@
 from json import JSONDecodeError
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, jsonify
 import json
 
 from sqlalchemy.exc import IntegrityError
@@ -36,14 +36,18 @@ def check():
         try:
             result = db.session.execute(db.select(Auth).where(Auth.username == request.form["username"]))
             record = result.scalars().all()
-            if record[0].password == enc(request.form["password"]):
+            '''if record[0].password == enc(request.form["password"]):
                 return "landing page"
             else:
-                #return render_template(confirmation_message="NO")
                 return "no"
         except IndexError:
-            #return render_template(confirmation_message="DNE")
-            return "dne"
+            return "dne"'''
+            if record[0].password == enc(request.form["password"]):
+                return jsonify({"confirmation": "OK"})
+            else:
+                return jsonify({"confirmation": "NO"})
+        except IndexError:
+            return jsonify({"confirmation": "DNE"})
 
 @app.route('/registration')
 def registration_page():
@@ -60,7 +64,9 @@ def register():
             pass
         return render_template('login.html')
 
-
+@app.route('/Dashboard')
+def landing_page():
+    return "landing page"
 
 
 

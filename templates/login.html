@@ -17,7 +17,7 @@
         </div>
             <p align="left" style="font-size:70%;margin:0px;position:relative;bottom:1vh;right;right:0vw;color:red;left:0.3vw;" id="password-error"></p>
         <div class="col-auto width">
-          <button type="submit" class="btn btn-light width" onclick="Validation()">Login</button>
+          <button type="submit" class="btn btn-light width" onclick="Validation(); return false;">Login</button>
         </div>
         <div style="padding:20px">
             <p style="color:#9F2B68"><b>Don't have an account? <a href="{{url_for('registration_page')}}" style="color:purple; text-decoration:none;">Register</b></a></p>

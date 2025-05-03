@@ -19,4 +19,27 @@ function Validation() {
 
   document.getElementById("username-error").innerHTML = usernameError;
   document.getElementById("password-error").innerHTML = passwordError;
+
+  if (usernameError === "" && passwordError === "") {
+    fetch("/authentication", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      },
+      body: `username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}`
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (data.confirmation === "OK") {
+        window.location.href = "/Dashboard";
+      } else if (data.confirmation === "NO") {
+        document.getElementById("password-error").innerHTML = "Incorrect password";
+      } else if (data.confirmation === "DNE") {
+        document.getElementById("username-error").innerHTML = "User does not exist. Please register.";
+      } else {
+        alert("Unexpected error. Please try again.");
+      }
+    })
+
+  }
 }
