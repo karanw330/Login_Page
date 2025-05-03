@@ -39,9 +39,11 @@ def check():
             if record[0].password == enc(request.form["password"]):
                 return "landing page"
             else:
-                return render_template("login.html", confirmation_message="NO")
+                #return render_template(confirmation_message="NO")
+                return "no"
         except IndexError:
-            return render_template("login.html", confirmation_message="DNE")
+            #return render_template(confirmation_message="DNE")
+            return "dne"
 
 @app.route('/registration')
 def registration_page():

@@ -28,36 +28,8 @@
 </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous">
     </script>
-    <script>
-        function Validation() {
-  let username = document.getElementById("exampleFormControlInput1").value.trim();
-  let password = document.getElementById("exampleFormControlInput2").value.trim();
-
-  let usernameError = "";
-  let passwordError = "";
-
-  if (username.length === 0) {
-    usernameError = "Cannot leave a blank entry";
-  } else if (username.length < 8) {
-    usernameError = "Minimum 8 characters are required in username";
-  }
-
-  if (password.length === 0) {
-    passwordError = "Cannot leave a blank entry";
-  } else if (password.length < 8) {
-    passwordError = "Minimum 8 characters are required in password";
-  }
-
-  if ({{confirmation_message}}=="NO") {
-    passwordError = "Incorrect password";
-  } else if ({{confirmation_message}}=="DNE") {
-    passwordError = "User does not exist";
-  }
-
-  document.getElementById("username-error").innerHTML = usernameError;
-  document.getElementById("password-error").innerHTML = passwordError;
-}
-
+    <!--<script src="static/login_validation.js">-->
+    <script src="{{ url_for('static', filename='login_validation.js') }}"></script>
     </script>
 </body>
 </html>
