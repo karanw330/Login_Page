@@ -37,11 +37,11 @@ def check():
             result = db.session.execute(db.select(Auth).where(Auth.username == request.form["username"]))
             record = result.scalars().all()
             if record[0].password == enc(request.form["password"]):
-                return "lessgooo"
+                return "landing page"
             else:
-                return "wrong"
+                return render_template("login.html", confirmation_message="NO")
         except IndexError:
-            return "user not found. Please register."
+            return render_template("login.html", confirmation_message="DNE")
 
 @app.route('/registration')
 def registration_page():
