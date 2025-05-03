@@ -2,10 +2,10 @@
 <html lang="en">
 {% include 'head.html' %}
 <body>
-<div style="padding: 250px 0px;" >
+<div style="padding: 15% 0px;" >
   <div class="center opaque">
-    <div class="card-body" style="resize: none;">
-        <h5 style= "padding: 20px; font-family:'Josefin sans'; font-size: 180%; color:#800020" class="card-title center-text"><b>Login</b></h5>
+    <div class="card-body">
+        <h5 style= "padding: 7%; font-family:'Josefin sans'; font-size: 180%; color:#800020" class="card-title center-text"><b>Login</b></h5>
         <form action="/authentication" method="post">
         <div class="mb-3">
           <input type="text" class="form-control border-rad opaque" id="exampleFormControlInput1" style="color:#915F6D;" name="username" placeholder="Username">
@@ -19,7 +19,7 @@
         <div class="col-auto width">
           <button type="submit" class="btn btn-light width" onclick="Validation(); return false;">Login</button>
         </div>
-        <div style="padding:20px">
+        <div style="padding:4%">
             <p style="color:#9F2B68"><b>Don't have an account? <a href="{{url_for('registration_page')}}" style="color:purple; text-decoration:none;">Register</b></a></p>
         </div>
         </form>
