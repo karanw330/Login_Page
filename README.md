@@ -27,5 +27,5 @@ Based on the server’s response, it either redirects or displays appropriate me
 
 ---
 
-✅ Note: - This app uses a custom password hashing function (enc()). In production, it's recommended to use proven libraries like bcrypt or werkzeug.security to ensure cryptographic strength and salt handling.
-          - Don't forget to replace app.db with your actual database filename if you've named it differently.
+✅ Note: **1)** This app uses a custom password hashing function (enc()). In production, it's recommended to use proven libraries like bcrypt or werkzeug.security to ensure cryptographic strength and salt handling.
+          **2)** Don't forget to replace app.db with your actual database filename if you've named it differently.
