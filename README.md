@@ -1,4 +1,4 @@
-# 🔐 Flask Login Page with AJAX & SQLAlchemy 
+# 🔐 Flask Login Page with FETCH & SQLAlchemy 
 
 This is a secure login page built using **Flask**, **SQLAlchemy**, **Fetch**, and **vanilla JavaScript**. The app validates user input on the client side, then uses AJAX to check credentials with the backend. 
 Based on the server’s response, it either redirects or displays appropriate messages without reloading the page.
